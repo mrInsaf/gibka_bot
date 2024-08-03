@@ -1,0 +1,63 @@
+2024-08-03 21:24:42,116 - DEBUG - Using proactor: IocpProactor
+2024-08-03 21:24:42,161 - ERROR - Произошла ошибка: Passing `parse_mode`, `disable_web_page_preview` or `protect_content` to Bot initializer is not supported anymore. These arguments have been removed in 3.7.0 version. Use `default=DefaultBotProperties(parse_mode=<ParseMode.HTML: 'HTML'>)` argument instead.
+Traceback (most recent call last):
+  File "C:\uk_bot\main.py", line 56, in <module>
+    asyncio.run(main(TOKEN))
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\uk_bot\main.py", line 43, in main
+    bot = Bot(TEST_TOKEN, parse_mode=ParseMode.HTML)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\client\bot.py", line 301, in __init__
+    raise TypeError(
+TypeError: Passing `parse_mode`, `disable_web_page_preview` or `protect_content` to Bot initializer is not supported anymore. These arguments have been removed in 3.7.0 version. Use `default=DefaultBotProperties(parse_mode=<ParseMode.HTML: 'HTML'>)` argument instead.
+2024-08-03 21:25:05,140 - DEBUG - Using proactor: IocpProactor
+2024-08-03 21:25:05,167 - INFO - Start polling
+2024-08-03 21:25:07,898 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 21:25:23,171 - INFO - Update id=959886561 is handled. Duration 297 ms by bot id=7373519023
+2024-08-03 21:25:45,375 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 21:25:45,375 - INFO - Polling stopped
+2024-08-03 21:25:52,501 - DEBUG - Using proactor: IocpProactor
+2024-08-03 21:25:52,523 - INFO - Start polling
+2024-08-03 21:25:53,047 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 21:25:53,398 - INFO - Update id=959886562 is handled. Duration 265 ms by bot id=7373519023
+2024-08-03 21:26:06,677 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 21:26:06,677 - INFO - Polling stopped
+2024-08-03 21:26:13,800 - DEBUG - Using proactor: IocpProactor
+2024-08-03 21:26:13,817 - INFO - Start polling
+2024-08-03 21:26:14,205 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 21:26:16,064 - INFO - Update id=959886563 is handled. Duration 327 ms by bot id=7373519023
+2024-08-03 21:28:43,129 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 21:28:43,129 - INFO - Polling stopped
+2024-08-03 22:34:02,423 - DEBUG - Using proactor: IocpProactor
+2024-08-03 22:34:02,473 - INFO - Start polling
+2024-08-03 22:34:02,750 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 22:34:03,460 - INFO - Update id=959886564 is handled. Duration 593 ms by bot id=7373519023
+2024-08-03 22:34:03,511 - INFO - Update id=959886565 is handled. Duration 639 ms by bot id=7373519023
+2024-08-03 22:34:15,818 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 22:34:15,818 - INFO - Polling stopped
+2024-08-03 22:34:21,979 - DEBUG - Using proactor: IocpProactor
+2024-08-03 22:34:21,999 - INFO - Start polling
+2024-08-03 22:34:22,219 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 22:34:41,097 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 22:34:41,097 - INFO - Polling stopped
+2024-08-03 22:34:48,908 - DEBUG - Using proactor: IocpProactor
+2024-08-03 22:34:48,928 - INFO - Start polling
+2024-08-03 22:34:49,168 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 22:34:49,608 - INFO - Update id=959886566 is handled. Duration 313 ms by bot id=7373519023
+2024-08-03 22:35:01,331 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 22:35:01,331 - INFO - Polling stopped
+2024-08-03 22:35:08,227 - DEBUG - Using proactor: IocpProactor
+2024-08-03 22:35:08,252 - INFO - Start polling
+2024-08-03 22:35:08,481 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 22:35:08,909 - INFO - Update id=959886567 is handled. Duration 343 ms by bot id=7373519023
+2024-08-03 22:35:23,121 - INFO - Update id=959886568 is handled. Duration 94 ms by bot id=7373519023
+2024-08-03 22:39:39,100 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 22:39:39,100 - INFO - Polling stopped
+2024-08-03 22:39:47,925 - DEBUG - Using proactor: IocpProactor
+2024-08-03 22:39:47,949 - INFO - Start polling
+2024-08-03 22:39:48,536 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 22:39:49,269 - INFO - Update id=959886569 is handled. Duration 530 ms by bot id=7373519023
+2024-08-03 22:39:51,265 - INFO - Update id=959886570 is handled. Duration 140 ms by bot id=7373519023
+2024-08-03 22:39:54,687 - INFO - Update id=959886571 is not handled. Duration 0 ms by bot id=7373519023
