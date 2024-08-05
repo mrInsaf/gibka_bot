@@ -9,6 +9,7 @@ class CalculatePrice(StatesGroup):
     input_quantity = State()
     choose_metal_thickness = State()
     choose_ral = State()
+    finish = State()
 
 
 

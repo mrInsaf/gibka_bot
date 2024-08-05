@@ -11,6 +11,7 @@ from aiogram.types import InlineKeyboardButton, CallbackQuery, Message
 from aiogram import F
 
 from data.actions import actions_dict
+from data.metal_thickness_values import metal_thickness_values
 from db.db import *
 from misc.misc import *
 from states.states import CalculatePrice
@@ -99,10 +100,65 @@ async def calculate_price_input_sizes(callback: CallbackQuery, state: FSMContext
 async def calculate_price_input_length(message: Message, state: FSMContext):
     data = await state.get_data()
     print(data)
-    if len(message.text.split()) == data['modification_info'][0][3]:
-        await message.answer("ВСе ок")
+    shelf_count = data['modification_info'][0][3]
+    input_sizes = message.text.split()
+
+    if len(input_sizes) == shelf_count:
+        shelf_dict = generate_shelf_dict(input_sizes, shelf_count)
+        await state.update_data(shelf_dict = shelf_dict)
+        await message.answer(text="Введите длину изделия в мм.\nМаксимальная длина - 3200мм")
+        await state.set_state(CalculatePrice.input_quantity)
     else:
         await message.answer("Некорректный ввод")
+
+
+@dp.message(CalculatePrice.input_quantity)
+async def calculate_price_input_quantity(message: Message, state: FSMContext):
+    data = await state.get_data()
+    input_text = message.text
+    try:
+        length = int(input_text)
+        if length > 3200:
+            await message.answer(text="Введите длину до 3200мм")
+        else:
+            await message.answer(text="Введите количество изделий")
+            await state.update_data(length = length)
+            await state.set_state(CalculatePrice.choose_metal_thickness)
+    except Exception as e:
+        await message.answer("Некорректный ввод")
+
+
+@dp.message(CalculatePrice.choose_metal_thickness)
+async def calculate_price_choose_metal_thickness(message: Message, state: FSMContext):
+    data = await state.get_data()
+    kb = create_kb()
+
+    try:
+        input_quantity = int(message.text)
+        await state.update_data(quantity = input_quantity)
+
+        for thickness_value in metal_thickness_values:
+            kb.add(InlineKeyboardButton(text=f"{thickness_value}мм", callback_data=str(thickness_value)))
+        kb.adjust(1)
+        await message.answer(text="Выберите толщину металла", reply_markup=kb.as_markup())
+        await state.set_state(CalculatePrice.finish)
+    except Exception as e:
+        print(e)
+        await message.answer(text="Некорректный ввод")
+
+
+@dp.callback_query(CalculatePrice.finish)
+async def calculate_price_finish(callback: CallbackQuery, state: FSMContext):
+    metal_thickness = callback.data
+    await state.update_data(metal_thickness = metal_thickness)
+    data = await state.get_data()
+    pic = data["modification_info"][0][-1]
+
+    result_str = calculate_price(data)
+    await callback.message.answer_photo(photo=pic, caption=result_str)
+
+
+
 
 
 async def main(token: str) -> None:
