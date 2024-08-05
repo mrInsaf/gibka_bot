@@ -38,3 +38,11 @@ def select_products():
 
 def select_modifications_by_product_id(product_id: int, ):
     return select(f"select * from modifications where product_id = {product_id}")
+
+
+def select_modification_by_id(product_id: int, modification_id: int):
+    return select(
+        f"select * from modifications "
+        f"where product_id = {product_id} "
+        f"and id = {modification_id}"
+    )

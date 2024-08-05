@@ -61,3 +61,1036 @@ TypeError: Passing `parse_mode`, `disable_web_page_preview` or `protect_content`
 2024-08-03 22:39:49,269 - INFO - Update id=959886569 is handled. Duration 530 ms by bot id=7373519023
 2024-08-03 22:39:51,265 - INFO - Update id=959886570 is handled. Duration 140 ms by bot id=7373519023
 2024-08-03 22:39:54,687 - INFO - Update id=959886571 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:26:32,276 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:26:32,347 - INFO - Start polling
+2024-08-03 23:26:32,608 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:26:33,047 - INFO - Update id=959886572 is handled. Duration 297 ms by bot id=7373519023
+2024-08-03 23:26:34,659 - INFO - Update id=959886573 is not handled. Duration 15 ms by bot id=7373519023
+2024-08-03 23:26:34,659 - ERROR - Cause exception while process update id=959886573 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:27:15,287 - INFO - Update id=959886574 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:27:15,288 - ERROR - Cause exception while process update id=959886574 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:27:39,925 - INFO - Update id=959886575 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:27:41,945 - INFO - Update id=959886576 is handled. Duration 500 ms by bot id=7373519023
+2024-08-03 23:27:43,115 - INFO - Update id=959886577 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:27:43,115 - ERROR - Cause exception while process update id=959886577 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:28:01,787 - INFO - Update id=959886578 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:28:01,787 - ERROR - Cause exception while process update id=959886578 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:28:10,062 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:28:10,062 - INFO - Polling stopped
+2024-08-03 23:28:23,160 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:28:23,204 - INFO - Start polling
+2024-08-03 23:28:23,702 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:28:24,922 - INFO - Update id=959886579 is handled. Duration 1000 ms by bot id=7373519023
+2024-08-03 23:28:25,557 - INFO - Update id=959886580 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:28:25,558 - ERROR - Cause exception while process update id=959886580 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 52, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:29:50,769 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:29:50,769 - INFO - Polling stopped
+2024-08-03 23:30:02,829 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:30:02,855 - INFO - Start polling
+2024-08-03 23:30:03,148 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:30:03,612 - INFO - Update id=959886581 is handled. Duration 343 ms by bot id=7373519023
+2024-08-03 23:30:04,747 - INFO - Update id=959886582 is not handled. Duration 14 ms by bot id=7373519023
+2024-08-03 23:30:04,747 - ERROR - Cause exception while process update id=959886582 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:30:53,216 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:30:53,216 - INFO - Polling stopped
+2024-08-03 23:31:19,502 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:31:19,534 - INFO - Start polling
+2024-08-03 23:31:19,905 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:31:20,290 - INFO - Update id=959886583 is handled. Duration 265 ms by bot id=7373519023
+2024-08-03 23:31:23,028 - INFO - Update id=959886584 is not handled. Duration 15 ms by bot id=7373519023
+2024-08-03 23:31:23,029 - ERROR - Cause exception while process update id=959886584 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:31:54,413 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:31:54,413 - INFO - Polling stopped
+2024-08-03 23:32:10,201 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:32:10,234 - INFO - Start polling
+2024-08-03 23:32:10,538 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:32:10,930 - INFO - Update id=959886585 is handled. Duration 280 ms by bot id=7373519023
+2024-08-03 23:32:11,742 - INFO - Update id=959886586 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:32:11,743 - ERROR - Cause exception while process update id=959886586 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:33:02,760 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:33:02,760 - INFO - Polling stopped
+2024-08-03 23:33:13,154 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:33:13,191 - INFO - Start polling
+2024-08-03 23:33:13,536 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:33:14,081 - INFO - Update id=959886587 is handled. Duration 421 ms by bot id=7373519023
+2024-08-03 23:33:15,234 - INFO - Update id=959886588 is not handled. Duration 15 ms by bot id=7373519023
+2024-08-03 23:33:15,235 - ERROR - Cause exception while process update id=959886588 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:33:56,881 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:33:56,881 - INFO - Polling stopped
+2024-08-03 23:34:08,446 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:34:08,479 - INFO - Start polling
+2024-08-03 23:34:08,727 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:34:09,141 - INFO - Update id=959886589 is handled. Duration 312 ms by bot id=7373519023
+2024-08-03 23:34:10,085 - INFO - Update id=959886590 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:34:10,085 - ERROR - Cause exception while process update id=959886590 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 52, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:34:46,196 - INFO - Update id=959886591 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:34:46,726 - INFO - Update id=959886592 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:34:46,726 - ERROR - Cause exception while process update id=959886592 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 52, in calculate_price_start
+    kb.adjust(1)
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-08-03 23:35:19,000 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:35:19,000 - INFO - Polling stopped
+2024-08-03 23:38:32,372 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:38:32,402 - INFO - Start polling
+2024-08-03 23:38:32,872 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:38:33,432 - INFO - Update id=959886593 is handled. Duration 422 ms by bot id=7373519023
+2024-08-03 23:38:34,916 - INFO - Update id=959886594 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:38:34,917 - ERROR - Cause exception while process update id=959886594 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+2024-08-03 23:39:10,752 - INFO - Polling stopped
+2024-08-03 23:39:10,753 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:39:16,889 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:39:16,919 - INFO - Start polling
+2024-08-03 23:39:17,139 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:39:22,979 - INFO - Update id=959886595 is handled. Duration 469 ms by bot id=7373519023
+2024-08-03 23:39:24,389 - INFO - Update id=959886596 is not handled. Duration 78 ms by bot id=7373519023
+2024-08-03 23:39:24,389 - ERROR - Cause exception while process update id=959886596 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 52, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+2024-08-03 23:40:39,075 - INFO - Polling stopped
+2024-08-03 23:40:39,075 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:40:48,072 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:40:48,101 - INFO - Start polling
+2024-08-03 23:40:48,338 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:40:48,812 - INFO - Update id=959886597 is handled. Duration 375 ms by bot id=7373519023
+2024-08-03 23:40:49,846 - INFO - Update id=959886598 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:40:49,846 - ERROR - Cause exception while process update id=959886598 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+2024-08-03 23:41:12,260 - INFO - Polling stopped
+2024-08-03 23:41:12,263 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:41:22,241 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:41:22,280 - INFO - Start polling
+2024-08-03 23:41:22,547 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:41:22,967 - INFO - Update id=959886599 is handled. Duration 311 ms by bot id=7373519023
+2024-08-03 23:41:23,545 - INFO - Update id=959886600 is not handled. Duration 14 ms by bot id=7373519023
+2024-08-03 23:41:23,545 - ERROR - Cause exception while process update id=959886600 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+2024-08-03 23:41:34,546 - INFO - Polling stopped
+2024-08-03 23:41:34,547 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:41:44,957 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:41:45,012 - INFO - Start polling
+2024-08-03 23:41:45,274 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:41:45,821 - INFO - Update id=959886601 is handled. Duration 421 ms by bot id=7373519023
+2024-08-03 23:41:46,862 - INFO - Update id=959886602 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:41:46,862 - ERROR - Cause exception while process update id=959886602 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 51, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+2024-08-03 23:42:24,845 - INFO - Polling stopped
+2024-08-03 23:42:24,845 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:42:34,994 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:42:35,024 - INFO - Start polling
+2024-08-03 23:42:35,269 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:42:35,701 - INFO - Update id=959886603 is handled. Duration 312 ms by bot id=7373519023
+2024-08-03 23:42:36,284 - INFO - Update id=959886604 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:42:36,285 - ERROR - Cause exception while process update id=959886604 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 53, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+2024-08-03 23:43:36,559 - INFO - Polling stopped
+2024-08-03 23:43:36,559 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:43:49,065 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:43:49,117 - INFO - Start polling
+2024-08-03 23:43:49,803 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:43:50,277 - INFO - Update id=959886605 is handled. Duration 359 ms by bot id=7373519023
+2024-08-03 23:43:50,921 - INFO - Update id=959886606 is not handled. Duration 14 ms by bot id=7373519023
+2024-08-03 23:43:50,921 - ERROR - Cause exception while process update id=959886606 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 54, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+2024-08-03 23:44:27,432 - INFO - Polling stopped
+2024-08-03 23:44:27,432 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:44:38,292 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:44:38,322 - INFO - Start polling
+2024-08-03 23:44:38,569 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:44:39,528 - INFO - Update id=959886607 is handled. Duration 719 ms by bot id=7373519023
+2024-08-03 23:44:40,217 - INFO - Update id=959886608 is not handled. Duration 14 ms by bot id=7373519023
+2024-08-03 23:44:40,217 - ERROR - Cause exception while process update id=959886608 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 55, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+2024-08-03 23:45:02,595 - INFO - Polling stopped
+2024-08-03 23:45:02,595 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:45:12,916 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:45:12,960 - INFO - Start polling
+2024-08-03 23:45:13,283 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:45:15,445 - INFO - Update id=959886609 is handled. Duration 2030 ms by bot id=7373519023
+2024-08-03 23:45:16,424 - INFO - Update id=959886610 is handled. Duration 139 ms by bot id=7373519023
+2024-08-03 23:46:10,113 - INFO - Polling stopped
+2024-08-03 23:46:10,113 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:46:20,499 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:46:20,543 - INFO - Start polling
+2024-08-03 23:46:20,858 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:46:21,452 - INFO - Update id=959886611 is handled. Duration 469 ms by bot id=7373519023
+2024-08-03 23:46:25,828 - INFO - Update id=959886612 is not handled. Duration 15 ms by bot id=7373519023
+2024-08-03 23:46:25,828 - ERROR - Cause exception while process update id=959886612 by bot id=7373519023
+NameError: name 'e' is not defined
+Traceback (most recent call last):
+  File "C:\uk_bot\main.py", line 53, in calculate_price_start
+    kb.add(InlineKeyboardButton(text=product_name, callback_data=product_id))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 54, in calculate_price_start
+    except e:
+NameError: name 'e' is not defined
+2024-08-03 23:46:45,900 - INFO - Polling stopped
+2024-08-03 23:46:45,900 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:46:54,537 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:46:54,587 - INFO - Start polling
+2024-08-03 23:46:56,211 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:46:56,768 - INFO - Update id=959886613 is handled. Duration 422 ms by bot id=7373519023
+2024-08-03 23:46:57,803 - INFO - Update id=959886614 is handled. Duration 109 ms by bot id=7373519023
+2024-08-03 23:47:58,665 - INFO - Polling stopped
+2024-08-03 23:47:58,665 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:48:08,474 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:48:08,504 - INFO - Start polling
+2024-08-03 23:48:08,827 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:48:09,490 - INFO - Update id=959886615 is handled. Duration 546 ms by bot id=7373519023
+2024-08-03 23:48:10,663 - INFO - Update id=959886616 is handled. Duration 110 ms by bot id=7373519023
+2024-08-03 23:48:12,162 - INFO - Update id=959886617 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:48:12,162 - ERROR - Cause exception while process update id=959886617 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+text
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 66, in calculate_price_choose_modification
+    kb.add(InlineKeyboardButton(text=modification[1], ))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+text
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+2024-08-03 23:49:37,745 - INFO - Polling stopped
+2024-08-03 23:49:37,745 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:49:48,111 - DEBUG - Using proactor: IocpProactor
+2024-08-03 23:49:48,144 - INFO - Start polling
+2024-08-03 23:49:48,684 - INFO - Run polling for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'
+2024-08-03 23:49:50,333 - INFO - Update id=959886618 is handled. Duration 1437 ms by bot id=7373519023
+2024-08-03 23:49:50,694 - INFO - Update id=959886619 is handled. Duration 94 ms by bot id=7373519023
+2024-08-03 23:49:51,758 - INFO - Update id=959886620 is not handled. Duration 0 ms by bot id=7373519023
+2024-08-03 23:49:51,758 - ERROR - Cause exception while process update id=959886620 by bot id=7373519023
+ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+Traceback (most recent call last):
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 49, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 142, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 137, in _wrapped
+    return await self._propagate_event(
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\router.py", line 162, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\uk_bot\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\uk_bot\main.py", line 66, in calculate_price_choose_modification
+    kb.add(InlineKeyboardButton(text=modification[2], callback_data=modification[0]))
+  File "C:\uk_bot\venv\lib\site-packages\pydantic\main.py", line 176, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for InlineKeyboardButton
+callback_data
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.7/v/string_type
+2024-08-03 23:50:18,368 - INFO - Polling stopped
+2024-08-03 23:50:18,378 - INFO - Polling stopped for bot @ilyas_gibka_test_bot id=7373519023 - 'ilyas_bot_test'

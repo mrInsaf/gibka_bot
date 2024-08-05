@@ -1,4 +1,4 @@
-from db.db import select_modifications_by_product_id
+from db.db import *
 
-print(select_modifications_by_product_id(1))
+print(select_modification_by_id(1, 2))
 
