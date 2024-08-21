@@ -5,13 +5,13 @@ from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 db_path = os.path.join(BASE_DIR, "gibka.db")
-conn = sqlite3.connect('db_path')
+print(f'db_path is {db_path}')
+conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
 
 def select(query):
     try:
-        conn = sqlite3.connect('grades.db')
         cursor.execute(query)
         rows = cursor.fetchall()
         conn.commit()
