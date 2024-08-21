@@ -30,7 +30,7 @@ def generate_shelf_dict(input_sizes: list, shelf_count: int):
 def shelf_dict_to_str(shelf_dict: dict):
     shelf_str = ""
     for literal in shelf_dict.keys():
-        shelf_str += f"{literal} = {shelf_dict[literal]}, "
+        shelf_str += f"{literal} = {shelf_dict[literal]}мм, "
     return shelf_str
 
 
@@ -50,7 +50,8 @@ def calculate_price(data: dict):
         f"Длина: {length}мм\n"
         f"Количество: {quantity} шт.\n"
         f"Толщина металла: {metal_thickness}мм\n\n"
-        f"Цена: {price}"
+        f"Цена: {price}\n\n"
+        f"Для перехода в главное меню нажмите /start"
     )
 
 

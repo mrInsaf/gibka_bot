@@ -36,11 +36,22 @@ bot = None
 
 @dp.message(Command('start'))
 async def start_command(message: types.Message, state: FSMContext):
+    kb = start_logic()
+    await message.answer("Выберите действие", reply_markup=kb.as_markup())
+
+
+@dp.callback_query(F.data == "back", CalculatePrice.choose_modification)
+async def start_command(callback: CallbackQuery, state: FSMContext):
+    kb = start_logic()
+    await callback.message.answer("Выберите действие", reply_markup=kb.as_markup())
+
+
+def start_logic():
     kb = create_kb()
     for action in actions_dict.keys():
         kb.add(InlineKeyboardButton(text=action, callback_data=actions_dict[action]))
     kb.adjust(1)
-    await message.answer("Выберите действие", reply_markup=kb.as_markup())
+    return kb
 
 
 @dp.callback_query(F.data == "calculate_price")
@@ -60,10 +71,17 @@ async def calculate_price_start(callback: CallbackQuery, state: FSMContext):
 
 
 @dp.callback_query(CalculatePrice.choose_modification)
+@dp.callback_query(F.data == "back", CalculatePrice.input_length)
 async def calculate_price_choose_modification(callback: CallbackQuery, state: FSMContext):
     kb = create_kb()
-    product_id = int(callback.data)
-    await state.update_data(product_id=product_id)
+    data = await state.get_data()
+
+    if callback.data != "back":
+        product_id = int(callback.data)
+        await state.update_data(product_id=product_id)
+    else:
+        product_id = data["product_id"]
+
     modifications = select_modifications_by_product_id(product_id)
     for modification in modifications:
         kb.add(InlineKeyboardButton(text=modification[2], callback_data=str(modification[0])))
@@ -73,14 +91,18 @@ async def calculate_price_choose_modification(callback: CallbackQuery, state: FS
 
 
 @dp.callback_query(CalculatePrice.input_sizes)
+@dp.callback_query(F.data == "back", CalculatePrice.input_quantity)
 async def calculate_price_input_sizes(callback: CallbackQuery, state: FSMContext):
     kb = create_kb()
 
     data = await state.get_data()
     product_id = data['product_id']
 
-    modification_id = int(callback.data)
-    await state.update_data(modification_id=modification_id)
+    if callback.data != "back":
+        modification_id = int(callback.data)
+        await state.update_data(modification_id=modification_id)
+    else:
+        modification_id = data["modification_id"]
 
     modification_info = select_modification_by_id(product_id, modification_id)
     await state.update_data(modification_info=modification_info)
@@ -91,7 +113,8 @@ async def calculate_price_input_sizes(callback: CallbackQuery, state: FSMContext
 
     await callback.message.answer_photo(
         photo=modification_pic,
-        caption=f"Вы выбрали {modification_name}\n{generate_shelf_prompt(shelf_count)} через пробел"
+        caption=f"Вы выбрали {modification_name}\n{generate_shelf_prompt(shelf_count)} в мм через пробел",
+        reply_markup=kb.as_markup()
     )
     await state.set_state(CalculatePrice.input_length)
 
@@ -99,33 +122,56 @@ async def calculate_price_input_sizes(callback: CallbackQuery, state: FSMContext
 @dp.message(CalculatePrice.input_length)
 async def calculate_price_input_length(message: Message, state: FSMContext):
     data = await state.get_data()
-    print(data)
+    kb = create_kb()
+
     shelf_count = data['modification_info'][0][3]
     input_sizes = message.text.split()
 
     if len(input_sizes) == shelf_count:
         shelf_dict = generate_shelf_dict(input_sizes, shelf_count)
-        await state.update_data(shelf_dict = shelf_dict)
-        await message.answer(text="Введите длину изделия в мм.\nМаксимальная длина - 3200мм")
+        await state.update_data(shelf_dict=shelf_dict)
+        await message.answer(text="Введите длину изделия в мм.\nМаксимальная длина - 3200мм",
+                             reply_markup=kb.as_markup())
         await state.set_state(CalculatePrice.input_quantity)
     else:
-        await message.answer("Некорректный ввод")
+        await message.answer("Некорректный ввод", reply_markup=kb.as_markup())
+
+
+@dp.callback_query(F.data == "back", CalculatePrice.choose_metal_thickness)
+async def back_to_calculate_price_input_length(callback: CallbackQuery, state: FSMContext):
+    data = await state.get_data()
+    kb = create_kb()
+
+    await callback.message.answer(text="Введите длину изделия в мм.\nМаксимальная длина - 3200мм",
+                                  reply_markup=kb.as_markup())
+    await state.set_state(CalculatePrice.input_quantity)
 
 
 @dp.message(CalculatePrice.input_quantity)
 async def calculate_price_input_quantity(message: Message, state: FSMContext):
     data = await state.get_data()
+    kb = create_kb()
+
     input_text = message.text
     try:
         length = int(input_text)
         if length > 3200:
-            await message.answer(text="Введите длину до 3200мм")
+            await message.answer(text="Введите длину до 3200мм", reply_markup=kb.as_markup())
         else:
-            await message.answer(text="Введите количество изделий")
-            await state.update_data(length = length)
+            await message.answer(text="Введите количество изделий", reply_markup=kb.as_markup())
+            await state.update_data(length=length)
             await state.set_state(CalculatePrice.choose_metal_thickness)
     except Exception as e:
-        await message.answer("Некорректный ввод")
+        await message.answer("Некорректный ввод", reply_markup=kb.as_markup())
+
+
+@dp.callback_query(F.data == "back", CalculatePrice.finish)
+async def back_to_calculate_price_input_quantity(callback: CallbackQuery, state: FSMContext):
+    data = await state.get_data()
+    kb = create_kb()
+
+    await callback.message.answer(text="Введите количество изделий", reply_markup=kb.as_markup())
+    await state.set_state(CalculatePrice.choose_metal_thickness)
 
 
 @dp.message(CalculatePrice.choose_metal_thickness)
@@ -135,7 +181,7 @@ async def calculate_price_choose_metal_thickness(message: Message, state: FSMCon
 
     try:
         input_quantity = int(message.text)
-        await state.update_data(quantity = input_quantity)
+        await state.update_data(quantity=input_quantity)
 
         for thickness_value in metal_thickness_values:
             kb.add(InlineKeyboardButton(text=f"{thickness_value}мм", callback_data=str(thickness_value)))
@@ -144,21 +190,33 @@ async def calculate_price_choose_metal_thickness(message: Message, state: FSMCon
         await state.set_state(CalculatePrice.finish)
     except Exception as e:
         print(e)
-        await message.answer(text="Некорректный ввод")
+        await message.answer(text="Некорректный ввод", reply_markup=kb.as_markup())
+
+
+@dp.callback_query(F.data == "back", CalculatePrice.checkout)
+async def back_to_calculate_price_choose_metal_thickness(callback: CallbackQuery, state: FSMContext):
+    data = await state.get_data()
+    kb = create_kb()
+
+    for thickness_value in metal_thickness_values:
+        kb.add(InlineKeyboardButton(text=f"{thickness_value}мм", callback_data=str(thickness_value)))
+    kb.adjust(1)
+    await callback.message.answer(text="Выберите толщину металла", reply_markup=kb.as_markup())
+    await state.set_state(CalculatePrice.finish)
 
 
 @dp.callback_query(CalculatePrice.finish)
 async def calculate_price_finish(callback: CallbackQuery, state: FSMContext):
+    kb = create_kb()
+
     metal_thickness = callback.data
-    await state.update_data(metal_thickness = metal_thickness)
+    await state.update_data(metal_thickness=metal_thickness)
     data = await state.get_data()
     pic = data["modification_info"][0][-1]
 
     result_str = calculate_price(data)
-    await callback.message.answer_photo(photo=pic, caption=result_str)
-
-
-
+    await callback.message.answer_photo(photo=pic, caption=result_str, reply_markup=kb.as_markup())
+    await state.set_state(CalculatePrice.checkout)
 
 
 async def main(token: str) -> None:
