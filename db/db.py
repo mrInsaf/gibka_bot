@@ -9,7 +9,7 @@ def select(query):
     try:
         conn = sqlite3.connect('grades.db')
     except Exception as e:
-        print(e)
+        print(f' yooo cheto pzc {e}')
     cursor.execute(query)
     rows = cursor.fetchall()
     conn.commit()
