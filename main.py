@@ -22,7 +22,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(current_dir)
 
 TEST_TOKEN = "7373519023:AAGHAMx01azAa4XRtG_QP3JApqLLEcxFsSg"
-MAIN_TOKEN = '6910756464:AAEWeQXTtuNnDHG3XrLIYDBC42ziAr7LfU8'
+MAIN_TOKEN = '7129795991:AAHb793O24B1UvI0c-TlGQ-m_e1zDFM0x08'
 
 # TOKEN = '6910756464:AAEWeQXTtuNnDHG3XrLIYDBC42ziAr7LfU8'
 dp = Dispatcher()
