@@ -6,8 +6,10 @@ cursor = conn.cursor()
 
 
 def select(query):
-    conn = sqlite3.connect('grades.db')
-    query = query
+    try:
+        conn = sqlite3.connect('grades.db')
+    except Exception as e:
+        print(e)
     cursor.execute(query)
     rows = cursor.fetchall()
     conn.commit()
