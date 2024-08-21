@@ -1,19 +1,24 @@
+import os
 import sqlite3
 from datetime import datetime
 
-conn = sqlite3.connect('db\gibka.db')
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(BASE_DIR, "gibka.db")
+conn = sqlite3.connect('db_path')
 cursor = conn.cursor()
 
 
 def select(query):
     try:
         conn = sqlite3.connect('grades.db')
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        conn.commit()
+        return rows
     except Exception as e:
         print(f' yooo cheto pzc {e}')
-    cursor.execute(query)
-    rows = cursor.fetchall()
-    conn.commit()
-    return rows
+
 
 
 def insert(table_name: str, data_list: list, auto_increment_id: int = 1):
