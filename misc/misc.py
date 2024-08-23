@@ -36,6 +36,7 @@ def shelf_dict_to_str(shelf_dict: dict):
 
 def calculate_price(data: dict):
     modification_info = data["modification_info"][0]
+    lico = data["lico"]
     shelf_sizes = data["shelf_dict"]
     shelf_str = shelf_dict_to_str(shelf_sizes)
     length = data["length"]
@@ -45,6 +46,7 @@ def calculate_price(data: dict):
 
     return (
         f"Вы ввели:\n\n"
+        f"Заказчик: {lico}\n"
         f"Название изделия: {modification_info[2]}\n"
         f"Размеры: {shelf_str}\n"
         f"Длина: {length}мм\n"

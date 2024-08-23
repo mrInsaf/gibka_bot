@@ -2,6 +2,7 @@ from aiogram.fsm.state import StatesGroup, State
 
 
 class CalculatePrice(StatesGroup):
+    start = State()
     choose_product = State()
     choose_modification = State()
     input_sizes = State()

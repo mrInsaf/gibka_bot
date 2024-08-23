@@ -40,7 +40,7 @@ async def start_command(message: types.Message, state: FSMContext):
     await message.answer("Выберите действие", reply_markup=kb.as_markup())
 
 
-@dp.callback_query(F.data == "back", CalculatePrice.choose_modification)
+@dp.callback_query(F.data == "back", CalculatePrice.start)
 async def start_command(callback: CallbackQuery, state: FSMContext):
     kb = start_logic()
     await callback.message.answer("Выберите действие", reply_markup=kb.as_markup())
@@ -55,10 +55,26 @@ def start_logic():
 
 
 @dp.callback_query(F.data == "calculate_price")
-@dp.callback_query(F.data == "back", CalculatePrice.input_sizes)
+@dp.callback_query(F.data == "back", CalculatePrice.choose_modification)
 async def calculate_price_start(callback: CallbackQuery, state: FSMContext):
     kb = create_kb()
+    lica_list = ["Физическое лицо", "Юридическое лицо"]
+    for lico in lica_list:
+        kb.add(InlineKeyboardButton(text=lico, callback_data=lico))
+    kb.adjust(1)
+
+    await callback.message.answer(text="Кем вы являетесь?", reply_markup=kb.as_markup())
+    await state.set_state(CalculatePrice.start)
+
+
+@dp.callback_query(F.data != "back", CalculatePrice.start)
+@dp.callback_query(F.data == "back", CalculatePrice.input_sizes)
+async def calculate_price_choose_modification(callback: CallbackQuery, state: FSMContext):
+    kb = create_kb()
     products = select_products()
+
+    if callback.data != "back":
+        await state.update_data(lico=callback.data)
 
     for product in products:
         product_id = str(product[0])
